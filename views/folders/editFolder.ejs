@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1>Edit Folder</h1>
+    <% if (locals.errors) { %>
+     <ul style="color: red;">
+        <% error.forEach(error => { %>
+         <li><%= error.msg %></li>
+        <% }) %>
+     </ul>
+    <% } %>
+
+    <form action="/folders/<%= folder.id %>" method="post">
+        <label for="name">Folder Name</label>
+        <input type="text" name="name" id="name" value="<%= folder.name %>">
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

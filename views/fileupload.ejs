@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1>Upload a file</h1>
+    <form action="/fileupload" method="post" enctype="multipart/form-data">
+        <% if (locals.errors) { %>
+            <ul style="color: red;">
+                <% errors.forEach(error => { %>
+                    <li><% error.msg %></li>
+                <% }) %>
+            </ul>
+        <% } %>
+        
+        <label for="folderId">Save to folder (optional)</label>
+        <select name="folderId" id="folderId">
+            <option value="" <%= !selectedFolderId ? "selected" : "" %>>No Folder</option>
+            <% folders.forEach(folder => { %>
+                <option value="<%= folder.id %>" <%= selectedFolderId === folder.id ? "selected" : "" %>>
+                    <%= folder.name %>
+                </option>
+            <% }) %>
+        </select>
+        <br>
+
+        <label for="file">Choose a file</label>
+        <input type="file" name="file" id="file">
+        <br>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>

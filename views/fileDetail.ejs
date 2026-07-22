@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1><%= file.filename %></h1>
+    <ul>
+        <li>File Path: <%= file.path %></li>
+        <li>File Size: <%= file.size %></li>
+        <li>File Uploaded At: <%= file.uploadedAt %></li>
+        <li>File Uploaded By: <%= file.user.firstname %> <%= file.user.lastname %></li>
+        <li>File Belongs to <%= file.folder ? file.folder.name : "no" %> folder</li>
+    </ul>
+    <a href="/files/<%= file.id %>/download"><button>Download</button></a>
+</body>
+</html>
