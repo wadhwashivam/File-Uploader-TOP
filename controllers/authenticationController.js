@@ -62,7 +62,7 @@ async function postLoginPage(req,res,next){
             if (error){
                 return next(error);
             }
-            return res.redirect("/");
+            return res.redirect("/folders");
         });
     })(req,res,next);
 }

@@ -1,12 +1,14 @@
 <%- include('../partials/head'), {title: "Folder List"} %>
+<div class="flex flex-col justify-center items-center shadow-xl/20 rounded-xl pb-10 max-w-400 pt-10">
 
-    <h1>My Folders</h1>
-    <a href="/folders/new"><button>New Folder</button></a>
+    <h1 class="text-3xl font-semibold">My Folders</h1>
+    <a href="/folders/new"><button class="btn btn-soft btn-error mt-5">New Folder</button></a>
     <ul>
         <% folders.forEach(folder => { %>
-            <li><a href="/folders/<%= folder.id %>"><%= folder.name %></a></li>
+            <li class="text-xl pt-5"><a href="/folders/<%= folder.id %>"><%= folder.name %></a></li>
         <% }) %>
     </ul>
-    <a href="/">Back home</a>
+    <a href="/" class="text-blue-600 dark:text-sky-400 mt-10 underline">Back home</a>
 
+</div>
 <%- include('../partials/footer') %>

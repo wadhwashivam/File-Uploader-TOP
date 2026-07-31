@@ -1,13 +1,15 @@
 <%- include('partials/head'), {title: "Home"} %>
-<h1><%= file.filename %></h1>
+<div class="flex flex-col justify-center items-center shadow-xl/20 rounded-xl pb-10 pt-10 max-w-400">
+
+<h1 class="text-3xl font-semibold"><%= file.filename %></h1>
 <ul>
-    <li>File Path: <%= file.path %></li>
-    <li>File Size: <%= file.size %></li>
-    <li>File Uploaded At: <%= file.uploadedAt %></li>
-    <li>File Uploaded By: <%= file.user.firstname %> <%= file.user.lastname %></li>
-    <li>File Belongs to <%= file.folder ? file.folder.name : "no" %> folder</li>
+    <li class="text-xl pt-5">File Path: <%= file.path %></li>
+    <li class="text-xl pt-5">File Size: <%= file.size %></li>
+    <li class="text-xl pt-5">File Uploaded At: <%= file.uploadedAt %></li>
+    <li class="text-xl pt-5">File Uploaded By: <%= file.user.firstname %> <%= file.user.lastname %></li>
+    <li class="text-xl pt-5">File Belongs to <%= file.folder ? file.folder.name : "no" %> folder</li>
 </ul>
-<a href="/files/<%= file.id %>/download"><button>Download</button></a>
+<a href="/files/<%= file.id %>/download"><button class="btn btn-soft btn-primary">Download</button></a>
 
-
+</div>
 <%- include('partials/footer') %>
