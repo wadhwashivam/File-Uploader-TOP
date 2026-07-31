@@ -1,6 +1,9 @@
 <%- include('../partials/head.ejs'), {title: "Login"} %>
 
-<h1>Sign Up Form</h1>
+<div class="flex flex-col justify-center items-center shadow-xl/20 rounded-xl pb-10 max-w-400  pt-10 ">
+
+
+<h1 class="text-xl font-semibold pb-10">Sign Up Form</h1>
 <% if (locals.errors && errors.length > 0) {%>
     <div style="color: red; margin-bottom: 15px;">
         <ul>
@@ -12,25 +15,26 @@
 <% } %>
 
 <form action="/signup" method="post">
-    <label for="firstname">Firstname</label>
-    <input type="text" name="firstname" id="firstname" value="<%= locals.formData?.firstname || '' %>">
+    <label for="firstname" class="text-lg">Firstname</label>
+    <input type="text" name="firstname" id="firstname" value="<%= locals.formData?.firstname || '' %>" class="input">
     <br>
-    <label for="lastname">Lastname</label>
-    <input type="text" name="lastname" id="lastname" value="<%= locals.formData?.lastname || '' %>">
+    <label for="lastname" class="text-lg">Lastname</label>
+    <input type="text" name="lastname" id="lastname" value="<%= locals.formData?.lastname || '' %>" class="input">
     <br>
-    <label for="username">Username</label>
-    <input type="email" name="username" id="username" value="<%= locals.formData?.username || '' %>">
+    <label for="username" class="text-lg">Username</label>
+    <input type="email" name="username" id="username" value="<%= locals.formData?.username || '' %>" class="input">
     <br>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password">
+    <label for="password" class="text-lg">Password</label>
+    <input type="password" name="password" id="password" class="input">
     <br>
-    <label for="confirmPassword">Confirm Password</label>
-    <input type="password" name="confirmPassword" id="confirmPassword">
+    <label for="confirmPassword" class="text-lg">Confirm Password</label>
+    <input type="password" name="confirmPassword" id="confirmPassword" class="input">
     <br>
-    <button type="submit">SignUp</button>
+    <button type="submit" class="btn btn-soft btn-accent">SignUp</button>
     <br>
-    <h3>If you already have an account, then login.</h3>
-    <a href="/login"><button type="button">Login</button></a>
+    <h3 class="text-base">If you already have an account, then login.</h3>
+    <a href="/login"><button type="button" class="btn btn-soft btn-primary">Login</button></a>
 </form>
+</div>
 
 <%- include('../partials/footer') %>

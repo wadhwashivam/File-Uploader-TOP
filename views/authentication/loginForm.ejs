@@ -1,5 +1,9 @@
 <%- include('../partials/head.ejs'), {title: "Login"} %>
-<h1>Login Form</h1>
+
+<div class="flex flex-col justify-center items-center shadow-xl/20 rounded-xl pb-10 max-w-400  pt-10 ">
+
+
+<h1 class="text-xl font-semibold pb-10">Login Form</h1>
 <% if (locals.errors) {%>
     <div style="color: red; margin-bottom: 15px;">
         <ul>
@@ -11,14 +15,17 @@
 <% } %>
 
 <form action="/login" method="post">
-    <label for="username">Username</label>
-    <input type="email" name="username" id="username">
+    <label for="username" class="text-lg">Username</label>
+    <input type="email" name="username" id="username" class="input">
     <br>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password">
+    <label for="password" class="text-lg pr-1">Password</label>
+    <input type="password" name="password" id="password" class="input">
     <br>
-    <button type="submit">Login</button>    
-    <a href="/signup"><button type="button">Create Account</button></a>
-</form>
+    <div class="pt-10 pl-10">
+        <button type="submit" class="btn btn-soft btn-primary" >Login</button>    
+        <a href="/signup"><button type="button" class="btn btn-soft btn-accent" >Create Account</button></a>
+    </div>
 
+</form>
+</div>
 <%- include('../partials/footer') %> 
