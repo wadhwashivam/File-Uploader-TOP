@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-</head>
-<body>
+<%- include('../partials/head'), {title: "New Folder"} %>
+
     <h1>New Folder</h1>
     <% if (locals.errors) { %>
      <ul style="color: red; margin-bottom: 15px;">
@@ -20,5 +14,5 @@
         <input type="text" name="name" id="name">
         <button type="submit">Create Folder</button>
     </form>
-</body>
-</html>
+
+<%- include('../partials/footer') %>

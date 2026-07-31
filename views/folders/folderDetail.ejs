@@ -1,28 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-</head>
-<body>
-    <h1><%= folder.name %></h1>
-    <a href="/folders/<%= folder.id %>/edit"><button>Rename</button></a>
-    <a href="/fileupload?folderId=<%= folder.id %>"><button>Upload file here</button></a>
-    <form action="/folders/<%= folder.id %>/delete" method="post" style="display: inline;">
-        <button type="submit">Delete Folder</button>
-    </form>
+<%- include('../partials/head'), {title: "Folder Detail"} %>
 
-    <h2>Files</h2>
-    <ul>
-        <% folder.files.forEach(file => { %>
-         <li>
-            <a href="/files/<%= file.id %>"><%= file.filename %></a>
-            <a href="/files/<%= file.id %>/download">⬇</a>
-        </li>
-        <% }) %>
-    </ul>
+<h1><%= folder.name %></h1>
+<a href="/folders/<%= folder.id %>/edit"><button>Rename</button></a>
+<a href="/fileupload?folderId=<%= folder.id %>"><button>Upload file here</button></a>
+<form action="/folders/<%= folder.id %>/delete" method="post" style="display: inline;">
+    <button type="submit">Delete Folder</button>
+</form>
 
-    <a href="/folders">Back to folders</a>
-</body>
-</html>
+<h2>Files</h2>
+<ul>
+    <% folder.files.forEach(file => { %>
+        <li>
+        <a href="/files/<%= file.id %>"><%= file.filename %></a>
+        <a href="/files/<%= file.id %>/download">⬇</a>
+    </li>
+    <% }) %>
+</ul>
+
+<a href="/folders">Back to folders</a>
+
+    <%- include('../partials/footer') %>

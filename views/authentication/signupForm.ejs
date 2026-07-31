@@ -1,42 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-</head>
-<body>
-    <h1>Sign Up Form</h1>
-    <% if (locals.errors && errors.length > 0) {%>
-        <div style="color: red; margin-bottom: 15px;">
-            <ul>
-                <% errors.forEach(error => { %>
-                <li><%= error.msg %></li>
-                <% }) %>
-            </ul>
-        </div>
-    <% } %>
+<%- include('../partials/head.ejs'), {title: "Login"} %>
 
-    <form action="/signup" method="post">
-        <label for="firstname">Firstname</label>
-        <input type="text" name="firstname" id="firstname" value="<%= locals.formData?.firstname || '' %>">
-        <br>
-        <label for="lastname">Lastname</label>
-        <input type="text" name="lastname" id="lastname" value="<%= locals.formData?.lastname || '' %>">
-        <br>
-        <label for="username">Username</label>
-        <input type="email" name="username" id="username" value="<%= locals.formData?.username || '' %>">
-        <br>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password">
-        <br>
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" name="confirmPassword" id="confirmPassword">
-        <br>
-        <button type="submit">SignUp</button>
-        <br>
-        <h3>If you already have an account, then login.</h3>
-        <a href="/login"><button type="button">Login</button></a>
-    </form>
-</body>
-</html>
+<h1>Sign Up Form</h1>
+<% if (locals.errors && errors.length > 0) {%>
+    <div style="color: red; margin-bottom: 15px;">
+        <ul>
+            <% errors.forEach(error => { %>
+            <li><%= error.msg %></li>
+            <% }) %>
+        </ul>
+    </div>
+<% } %>
+
+<form action="/signup" method="post">
+    <label for="firstname">Firstname</label>
+    <input type="text" name="firstname" id="firstname" value="<%= locals.formData?.firstname || '' %>">
+    <br>
+    <label for="lastname">Lastname</label>
+    <input type="text" name="lastname" id="lastname" value="<%= locals.formData?.lastname || '' %>">
+    <br>
+    <label for="username">Username</label>
+    <input type="email" name="username" id="username" value="<%= locals.formData?.username || '' %>">
+    <br>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password">
+    <br>
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" name="confirmPassword" id="confirmPassword">
+    <br>
+    <button type="submit">SignUp</button>
+    <br>
+    <h3>If you already have an account, then login.</h3>
+    <a href="/login"><button type="button">Login</button></a>
+</form>
+
+<%- include('../partials/footer') %>
