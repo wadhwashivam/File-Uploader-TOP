@@ -1320,6 +1320,15 @@
   .table {
     display: table;
   }
+  .min-h-10 {
+    min-height: calc(var(--spacing) * 10);
+  }
+  .min-h-20 {
+    min-height: calc(var(--spacing) * 20);
+  }
+  .min-h-100 {
+    min-height: calc(var(--spacing) * 100);
+  }
   .min-h-\[80vh\] {
     min-height: 80vh;
   }
@@ -1367,6 +1376,9 @@
   }
   .min-w-100 {
     min-width: calc(var(--spacing) * 100);
+  }
+  .min-w-200 {
+    min-width: calc(var(--spacing) * 200);
   }
   .flex-1 {
     flex: 1;
