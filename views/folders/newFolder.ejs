@@ -1,6 +1,8 @@
 <%- include('../partials/head'), {title: "New Folder"} %>
 
-    <h1>New Folder</h1>
+<div class="flex flex-col justify-center items-center shadow-xl/20 rounded-xl pb-10 pt-10 max-w-400">
+
+    <h1 class="text-3xl font-semibold">New Folder</h1>
     <% if (locals.errors) { %>
      <ul style="color: red; margin-bottom: 15px;">
         <% errors.forEach(error => { %>
@@ -10,9 +12,11 @@
     <% } %>
 
     <form action="/folders" method="post">
-        <label for="name">Folder Name</label>
-        <input type="text" name="name" id="name">
-        <button type="submit">Create Folder</button>
+        <label for="name" class="text-xl">Folder Name</label>
+        <input type="text" name="name" id="name" class="input">
+        <br>
+        <button type="submit" class="btn btn-soft btn-success ml-20 mt-5">Create Folder</button>
     </form>
+</div>
 
 <%- include('../partials/footer') %>

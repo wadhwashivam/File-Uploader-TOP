@@ -8,6 +8,8 @@
       "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-sky-400: oklch(74.6% 0.16 232.661);
+    --color-blue-600: oklch(54.6% 0.245 262.881);
     --color-indigo-500: oklch(58.5% 0.233 277.117);
     --spacing: 0.25rem;
     --container-2xl: 42rem;
@@ -1372,6 +1374,9 @@
   .flex-col {
     flex-direction: column;
   }
+  .flex-row {
+    flex-direction: row;
+  }
   .content-center {
     align-content: center;
   }
@@ -1449,6 +1454,12 @@
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
   }
+  .pt-3 {
+    padding-top: calc(var(--spacing) * 3);
+  }
+  .pt-5 {
+    padding-top: calc(var(--spacing) * 5);
+  }
   .pt-10 {
     padding-top: calc(var(--spacing) * 10);
   }
@@ -1457,6 +1468,9 @@
   }
   .pr-100 {
     padding-right: calc(var(--spacing) * 100);
+  }
+  .pb-3 {
+    padding-bottom: calc(var(--spacing) * 3);
   }
   .pb-10 {
     padding-bottom: calc(var(--spacing) * 10);
@@ -1495,11 +1509,17 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
+  .text-blue-600 {
+    color: var(--color-blue-600);
+  }
   .italic {
     font-style: italic;
   }
   .font-stretch-extra-expanded {
     font-stretch: extra-expanded;
+  }
+  .underline {
+    text-decoration-line: underline;
   }
   .shadow-xl\/20 {
     --tw-shadow-alpha: 20%;
@@ -1534,6 +1554,11 @@
       --btn-fg: var(--color-accent-content);
       --btn-soft-bg: initial;
     }
+    .btn-error {
+      --btn-color: var(--color-error);
+      --btn-fg: var(--color-error-content);
+      --btn-soft-bg: initial;
+    }
     .btn-primary {
       --btn-color: var(--color-primary);
       --btn-fg: var(--color-primary-content);
@@ -1548,6 +1573,11 @@
   @layer daisyui.l1.l2.l3 {
     .aura:has( > .btn,  > .input,  > .select) {
       --aura-radius: var(--radius-field);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .dark\:text-sky-400 {
+      color: var(--color-sky-400);
     }
   }
 }

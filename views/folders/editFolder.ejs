@@ -1,5 +1,7 @@
 <%- include('../partials/head'), {title: "Edit Folder"} %>
-<h1>Edit Folder</h1>
+<div class="flex flex-col justify-center items-center shadow-xl/20 rounded-xl pb-10 max-w-400 pt-10">
+
+    <h1 class="text-3xl font-semibold">Edit Folder</h1>
 <% if (locals.errors) { %>
     <ul style="color: red;">
     <% error.forEach(error => { %>
@@ -8,10 +10,12 @@
     </ul>
 <% } %>
 
-<form action="/folders/<%= folder.id %>" method="post">
-    <label for="name">Folder Name</label>
-    <input type="text" name="name" id="name" value="<%= folder.name %>">
-    <button type="submit">Save</button>
+<form action="/folders/<%= folder.id %>" method="post" class="mt-5">
+    <label for="name" class="text-xl">Folder Name</label>
+    <input type="text" name="name" id="name" value="<%= folder.name %>" class="input">
+    <br>
+    <button type="submit" class="btn btn-soft btn-success ml-25 mt-5">Save</button>
 </form>
 
+</div>
 <%- include('../partials/footer') %>
