@@ -55,9 +55,9 @@ app.use("/", authenticationRouter);
 app.use("/", fileRouter);
 app.use("/", folderRouter);
 
-app.listen(process.env.NODE_PORT, (error) => {
+app.listen(process.env.PORT, (error) => {
     if (error){
         throw error;
     }
-    console.log("App listening on port: ", process.env.NODE_PORT);
-})
+    console.log("App listening on port: ", process.env.PORT);
+});

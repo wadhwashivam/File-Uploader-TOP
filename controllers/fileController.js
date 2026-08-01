@@ -4,7 +4,7 @@ import supabase from "../lib/supabase.js";
 async function getUploadPage(req,res,next){
     try{
         const folders = await db.getFoldersByUser(req.user.id);
-        res.render("fileUpload", {
+        res.render("fileupload", {
             title: "Upload a File",
             folders,
             selectedFolderId: req.query.folderId || "",

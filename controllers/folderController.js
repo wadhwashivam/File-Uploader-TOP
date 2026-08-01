@@ -88,14 +88,14 @@ async function postUpdateFolder(req,res,next) {
 
         const { name } = req.body;
         if (!name || !name.trim()){
-            return res.status(400).render("folder/editFolder", {
+            return res.status(400).render("folders/editFolder", {
                 title: "Edit Folder",
                 folder,
                 errors: [{ msg: "Folder Name is required." }]
             })
         };
 
-        await db.updateFolderName(req.params.id, name.trim());x
+        await db.updateFolderName(req.params.id, name.trim());
         res.redirect(`/folders/${req.params.id}`);
     } catch (error) {
         next(error);

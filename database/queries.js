@@ -40,7 +40,7 @@ async function getFoldersByUser(userId){
 async function getFolderById(id){
     return prisma.folder.findUnique({
         where: { id },
-        include: { files: true },
+        include: { files: true, user: true },
     });
 }
 
